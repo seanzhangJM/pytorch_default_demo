@@ -10,6 +10,12 @@ import torch
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
+from pytorch_default_demo.util.log_config import get_logger
+from torch import nn
+from d2l import torch as d2l
+from pytorch_default_demo.config.ttparas.traintestconfigs import TRAIN_CONFIG
+
+logger = get_logger()
 
 if __name__ == '__main__':
     pass

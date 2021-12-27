@@ -5,3 +5,7 @@
 # @Email   : YYDSPanda@163.com
 # @File    : MyModel.py
 # @Software: PyCharm
+
+from pytorch_default_demo.util.log_config import get_logger
+
+logger = get_logger()

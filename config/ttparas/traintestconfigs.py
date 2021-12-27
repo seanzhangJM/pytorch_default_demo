@@ -6,6 +6,9 @@
 # @File    : traintestconfigs.py
 # @Software: PyCharm
 
-BATCH_SIZE = 256
-LEARNING_RATE = 1e-3
-NUM_EPOCHS = 10
+
+TRAIN_CONFIG = {
+    "BATCH_SIZE": 256,
+    "LEARNING_RATE": 1e-3,
+    "NUM_EPOCHS": 10
+}

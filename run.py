@@ -6,5 +6,6 @@
 # @File    : run.py
 # @Software: PyCharm
 from pytorch_default_demo.util.util import logger
+
 if __name__ == '__main__':
     print(logger)

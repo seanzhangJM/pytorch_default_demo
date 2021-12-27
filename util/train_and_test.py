@@ -10,7 +10,9 @@ import torch
 from torch import nn
 
 from pytorch_default_demo.util.bean import Accumulator, Animator
+from pytorch_default_demo.util.log_config import get_logger
 
+logger = get_logger()
 
 def accuracy(y_hat, y):
     """计算预测正确的数量"""
@@ -28,6 +30,7 @@ def evaluate_accuracy(net, data_iter):
     with torch.no_grad():
         for X, y in data_iter:
             metric.add(accuracy(net(X), y), y.numel())
+    logger.info("验证{}数据集准确率成功".format(str(data_iter)))
     return metric[0] / metric[1]
 
 
@@ -79,6 +82,7 @@ def train(net, train_iter, test_iter, loss, num_epochs, updater):
                         legend=['train loss', 'train acc', 'test acc'])
     for epoch in range(num_epochs):
         train_metrics = train_epoch(net, train_iter, loss, updater)
+        logger.info("第{}轮：训练完成".format(str(epoch)))
         test_acc = evaluate_accuracy(net, test_iter)
         animator.add(epoch + 1, train_metrics + (test_acc,))
     train_loss, train_acc = train_metrics
